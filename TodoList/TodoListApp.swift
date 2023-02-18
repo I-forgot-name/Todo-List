@@ -8,14 +8,17 @@
 import SwiftUI
 import FirebaseCore
 import FirebaseFirestore
+import Swinject
 
 @main
 struct TodoListApp: App {
     let persistenceController = PersistenceController.shared
-    let mainCoordinator = MainCoordinator()
+    private let mainCoordinator: MainCoordinator
 
+    private let assembler = Assembler([TaskServiceAssembly()])
     init() {
         FirebaseApp.configure()
+        mainCoordinator = .init(assembler)
     }
 
     var body: some Scene {

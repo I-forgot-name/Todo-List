@@ -6,6 +6,14 @@
 //
 
 struct MainState: Equatable {
-    var tasks: [MainTaskModel] = [.init(id: 1, title: "Хлеб", isOn: true), .init(id: 2, title: "Вода", isOn: false)]
+    enum LoadingStatus: Equatable {
+        case idle
+        case load
+        case error
+    }
+    var loadingStatus: LoadingStatus = LoadingStatus.idle
+
+
+    var tasks: [MainTaskModel] = []
     var title = ""
 }
