@@ -165,6 +165,13 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		D99C122D29A1562200BB8C7B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		D9D65888297497DB00C3F089 = {
 			isa = PBXGroup;
 			children = (
@@ -217,6 +224,7 @@
 		D9D658A82974988B00C3F089 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				D99C122D29A1562200BB8C7B /* Services */,
 				D99C121A29A133E300BB8C7B /* UIReusableComponents */,
 			);
 			path = Core;
@@ -242,6 +250,7 @@
 				D9D6588E297497DB00C3F089 /* Frameworks */,
 				D9D6588F297497DB00C3F089 /* Resources */,
 				D94413CE29A12AE100D156C1 /* SwiftGen */,
+				592DCC74666225AF2F8B639E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -300,6 +309,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		592DCC74666225AF2F8B639E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TodoList/Pods-TodoList-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TodoList/Pods-TodoList-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TodoList/Pods-TodoList-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		D94413CE29A12AE100D156C1 /* SwiftGen */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

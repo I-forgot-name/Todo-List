@@ -6,11 +6,17 @@
 //
 
 import SwiftUI
+import FirebaseCore
+import FirebaseFirestore
 
 @main
 struct TodoListApp: App {
     let persistenceController = PersistenceController.shared
     let mainCoordinator = MainCoordinator()
+
+    init() {
+        FirebaseApp.configure()
+    }
 
     var body: some Scene {
         WindowGroup {

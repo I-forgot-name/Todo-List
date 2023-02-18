@@ -6,5 +6,6 @@ target 'TodoList' do
   use_frameworks!
 
   pod 'SwiftGen', '~> 6.0'
-  
+  pod 'FirebaseCore'
+  pod 'FirebaseFirestore'
 end
