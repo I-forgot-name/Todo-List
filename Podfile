@@ -8,4 +8,6 @@ target 'TodoList' do
   pod 'SwiftGen', '~> 6.0'
   pod 'FirebaseCore'
   pod 'FirebaseFirestore'
+  pod 'Swinject'
+
 end
