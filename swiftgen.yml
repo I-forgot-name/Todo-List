@@ -1,0 +1,30 @@
+input_dir: TodoList/Resources/
+output_dir: TodoList/Resources/Generated/
+
+strings:
+    inputs:
+      - en.lproj/Localizable.strings
+    outputs:
+        templateName: structured-swift5
+        output: Strings.swift
+
+xcassets:
+    inputs:
+      - Assets.xcassets
+    outputs:
+        templateName: swift5
+        output: Images.swift
+
+fonts:
+  inputs:
+    - Fonts
+  outputs:
+    - templateName: swift5
+      output: Fonts.swift
+
+colors:
+    inputs:
+      - Colors.txt
+    outputs:
+      - templatePath: TodoList/Resources/SwiftGen/colors.stencil
+        output: Colors.swift
