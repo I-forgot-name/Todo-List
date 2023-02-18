@@ -10,10 +10,11 @@ import SwiftUI
 @main
 struct TodoListApp: App {
     let persistenceController = PersistenceController.shared
+    let mainCoordinator = MainCoordinator()
 
     var body: some Scene {
         WindowGroup {
-            TasksCV()
+            mainCoordinator.start()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
