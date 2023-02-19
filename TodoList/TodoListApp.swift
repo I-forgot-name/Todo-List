@@ -17,6 +17,8 @@ struct TodoListApp: App {
 
     private let assembler = Assembler([TaskServiceAssembly()])
     init() {
+        FirebaseConfiguration.shared.setLoggerLevel(.min)
+
         FirebaseApp.configure()
         mainCoordinator = .init(assembler)
     }
