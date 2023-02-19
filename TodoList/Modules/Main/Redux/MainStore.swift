@@ -9,7 +9,9 @@ import Foundation
 
 enum MainAction {
     case onAppear
-    case didTapCheckmark(Int)
+    case didTapCheckmark(id: String)
+
+    case completeLoadTasks(Result<[MainTaskModel], Error>)
 }
 
 final class MainStore: ObservableObject {
@@ -34,6 +36,7 @@ private final class MainReducer {
     func reduce(_ state: inout MainState, _ action: MainAction) {
         switch action {
         case .onAppear:
+            updateLoadingStatus(.load, in: &state)
             state.title = "Appear"
         case .didTapCheckmark(let id):
             guard let index = state.tasks.firstIndex(where: { model in
@@ -42,7 +45,31 @@ private final class MainReducer {
                 return
             }
 
-            state.tasks[index].isOn.toggle()
+            state.tasks[index].isComplete.toggle()
+        case .completeLoadTasks(let result):
+            handleResultLoad(for: result, in: &state)
+        }
+    }
+
+    private func updateLoadingStatus(
+        _ status: MainState.LoadingStatus,
+        in state: inout MainState
+    ) {
+        guard state.loadingStatus != status else { return }
+        state.loadingStatus = status
+    }
+
+    private func handleResultLoad(
+        for result: Result<[MainTaskModel], Error>,
+        in state: inout MainState
+    ) {
+
+        switch result {
+        case .success(let tasks):
+            state.tasks = tasks
+            updateLoadingStatus(.idle, in: &state)
+        case .failure(let error):
+            updateLoadingStatus(.error, in: &state)
         }
     }
 }

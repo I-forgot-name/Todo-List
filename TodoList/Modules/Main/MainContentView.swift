@@ -10,18 +10,22 @@ import SwiftUI
 struct MainContentView: View {
 
     @EnvironmentObject var store: MainStore
+    private let ac: MainActionCreator
+
+    init(ac: MainActionCreator) {
+        self.ac = ac
+    }
 
     var body: some View {
-        List (store.state.tasks, id: \.self) { task in
-            TaskCell(model: TaskCellModel.init(title: task.title, isOn: task.isOn)) {
-                store.dispatch(.didTapCheckmark(task.id))
+        NavigationView {
+            List (store.state.tasks, id: \.self) { task in
+                TaskCell(model: TaskCellModel.init(title: task.title, isOn: task.isComplete)) {
+                    store.dispatch(.didTapCheckmark(id: task.id))
+                }
             }
         }
-    }
-}
-
-struct MainContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainContentView()
+        .onAppear {
+            store.dispatch(.onAppear)
+        }
     }
 }

@@ -6,7 +6,13 @@
 //
 
 struct MainTaskModel: Equatable, Hashable {
-    let id: Int
+    let id: String
     let title: String
-    var isOn: Bool
+    var isComplete: Bool
+
+    init(_ model: TaskResponseModel) {
+        id = model.id
+        title = model.title
+        isComplete = model.isComplete
+    }
 }
