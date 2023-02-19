@@ -20,7 +20,7 @@ struct TodoListApp: App {
         FirebaseConfiguration.shared.setLoggerLevel(.min)
 
         FirebaseApp.configure()
-        mainCoordinator = .init(assembler)
+        mainCoordinator = .init(assembler) 
     }
 
     var body: some Scene {
