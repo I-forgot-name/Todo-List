@@ -10,7 +10,6 @@ import FirebaseFirestoreSwift
 
 protocol ITasksService {
     func getTasks(_ completion: @escaping (Result<[TaskResponseModel], Error>) -> Void)
-
 }
 
 final class TasksService: ITasksService {
