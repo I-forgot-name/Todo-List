@@ -4,7 +4,10 @@
 {% macro colorName name %}{{ name|escapeReservedKeywords }}{% endmacro %}
 {% macro rgbaValue color %}0x{{ color.red }}{{ color.green }}{{ color.blue }}{{ color.alpha }}{% endmacro %}
 {% macro colorValue color %}UIColor(rgbaValue: {% call rgbaValue color %}){% endmacro %}
+{% macro swiftUIcolorValue color %}Color(rgbaValue: {% call rgbaValue color %}){% endmacro %}
+
 import UIKit
+import SwiftUI
 
 extension UIColor {
 
@@ -19,6 +22,22 @@ extension UIColor {
             green: CGFloat((rgbaValue >> 16) & 0xff) / 255,
             blue: CGFloat((rgbaValue >> 8) & 0xff) / 255,
             alpha: CGFloat((rgbaValue) & 0xff) / 255
+        )
+    }
+}
+
+extension Color {
+    {% for color in palettes.first.colors %}
+    /// {% call rgbaValue color %}
+    static let {% call colorName color.name %} = {% call swiftUIcolorValue color %}
+    {% endfor %}
+
+    init(rgbaValue: UInt32) {
+        self.init(
+            red: Double((rgbaValue >> 24) & 0xff) / 255,
+            green: Double((rgbaValue >> 16) & 0xff) / 255,
+            blue: Double((rgbaValue >> 8) & 0xff) / 255,
+            opacity: Double((rgbaValue) & 0xff) / 255
         )
     }
 }
