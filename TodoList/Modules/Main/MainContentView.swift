@@ -9,8 +9,9 @@ import SwiftUI
 
 struct MainContentView: View {
 
-    @EnvironmentObject var store: MainStore
+    @EnvironmentObject private var store: MainStore
     private let ac: MainActionCreator
+
 
     init(ac: MainActionCreator) {
         self.ac = ac
@@ -18,11 +19,14 @@ struct MainContentView: View {
 
     var body: some View {
         NavigationView {
-            List (store.state.tasks, id: \.self) { task in
-                TaskCell(model: TaskCellModel.init(title: task.title, isOn: task.isComplete)) {
-                    store.dispatch(.didTapCheckmark(id: task.id))
+            VStack {
+                List (store.state.tasks, id: \.self) { task in
+                    TaskCell(model: TaskCellModel.init(title: task.title, isOn: task.isComplete)) {
+                        store.dispatch(.didTapCheckmark(id: task.id))
+                    }
                 }
             }
+            .navigationTitle(L10n.Main.Title.yourTask)
         }
         .onAppear {
             store.dispatch(.onAppear)
