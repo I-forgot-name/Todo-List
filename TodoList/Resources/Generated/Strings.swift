@@ -13,8 +13,8 @@ internal enum L10n {
 
   internal enum Main {
     internal enum Title {
-      /// Task
-      internal static let task = L10n.tr("Localizable", "Main.Title.Task")
+      /// Your tasks
+      internal static let yourTask = L10n.tr("Localizable", "Main.Title.yourTask")
     }
   }
 }

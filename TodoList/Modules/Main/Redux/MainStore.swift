@@ -37,7 +37,6 @@ private final class MainReducer {
         switch action {
         case .onAppear:
             updateLoadingStatus(.load, in: &state)
-            state.title = "Appear"
         case .didTapCheckmark(let id):
             guard let index = state.tasks.firstIndex(where: { model in
                 model.id == id
