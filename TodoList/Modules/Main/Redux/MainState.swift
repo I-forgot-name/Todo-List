@@ -12,8 +12,5 @@ struct MainState: Equatable {
         case error
     }
     var loadingStatus: LoadingStatus = LoadingStatus.idle
-
-
     var tasks: [MainTaskModel] = []
-    var title = ""
 }

@@ -13,19 +13,19 @@ import Swinject
 @main
 struct TodoListApp: App {
     let persistenceController = PersistenceController.shared
-    private let mainCoordinator: MainCoordinator
+    private let tabBarCoordinator: TabBarCoordinator
 
     private let assembler = Assembler([TaskServiceAssembly()])
     init() {
         FirebaseConfiguration.shared.setLoggerLevel(.min)
 
         FirebaseApp.configure()
-        mainCoordinator = .init(assembler) 
+        tabBarCoordinator = .init(assembler) 
     }
 
     var body: some Scene {
         WindowGroup {
-            mainCoordinator.start()
+            tabBarCoordinator.start()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
