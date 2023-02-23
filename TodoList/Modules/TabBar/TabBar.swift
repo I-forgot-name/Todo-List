@@ -26,40 +26,44 @@ struct TabBar: View {
     }
 
     var body: some View {
+        VStack(alignment: .center, spacing: 0) {
 
-        switch tab {
-        case .main:
-            mainCoordinator.start()
-        case .profile:
-            // TODO: when write profile
-            Text("Profile")
-        }
-
-        Spacer()
-
-        HStack(alignment: .center, spacing: 50) {
-            // TODO: Add to reusable butons
-            Button(action: {
-                tab = .main
-                tabBarStore.dispatch(.changeTab(.main))
-            }, label: {
-                Image(systemName: "house.fill")
-                    .resizable()
-                    .foregroundColor(.accent)
-                    .scaledToFit()
-            })
-            .frame(width: 36, height: 36)
-            Button(action: {
-                // TODO: Write code on action plus task
-            }, label: {
-                Image(systemName: "plus.circle.fill")
-                    .resizable()
-                    .foregroundColor(.accent)
-                    .scaledToFit()
-            })
-            .frame(width: 36, height: 36)
-
+            switch tab {
+            case .main:
+                mainCoordinator.start()
+            case .profile:
+                // TODO: when write profile
+                Text("Profile")
             }
-        .frame(height: 50)
+
+            Spacer()
+
+            GeometryReader { geo in
+                HStack (alignment: .center) {
+                    Button(action: {
+                        tab = .main
+                        tabBarStore.dispatch(.changeTab(.main))
+                    }, label: {
+                        TabBarButton(imageName: "list.bullet", isActive: tab == .main)
+                    })
+                    .frame(width: 30, height: 30)
+
+                    Spacer()
+
+                    Button(action: {
+                        tab = .profile
+                        tabBarStore.dispatch(.changeTab(.profile))
+                    }, label: {
+                        TabBarButton(imageName: "person.crop.circle", isActive: tab == .profile)
+                    })
+                    .frame(width: 30, height: 30)
+                }
+                .padding(.horizontal, 33)
+                .frame(width: geo.size.width, height: geo.size.height)
+                .background(Color.white)
+            }
+            .ignoresSafeArea(edges: .bottom)
+            .frame(height: 50, alignment: .bottom)
+        }
     }
 }
