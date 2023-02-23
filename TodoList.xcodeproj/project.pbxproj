@@ -14,6 +14,7 @@
 		D905EB9729A2AC5E00B34F6C /* TabBarStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D905EB9629A2AC5E00B34F6C /* TabBarStore.swift */; };
 		D905EB9929A2AC6D00B34F6C /* TabBarState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D905EB9829A2AC6D00B34F6C /* TabBarState.swift */; };
 		D94413CB29A12A7E00D156C1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D94413CD29A12A7E00D156C1 /* Localizable.strings */; };
+		D95A758129A7B0600049715D /* TabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95A758029A7B0600049715D /* TabBarButton.swift */; };
 		D97DC9B729A1299800C333A8 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = D97DC9B629A1299800C333A8 /* swiftgen.yml */; };
 		D99C121429A12D5300BB8C7B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99C121029A12D5300BB8C7B /* Colors.swift */; };
 		D99C121529A12D5300BB8C7B /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99C121129A12D5300BB8C7B /* Strings.swift */; };
@@ -46,6 +47,7 @@
 		D905EB9629A2AC5E00B34F6C /* TabBarStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarStore.swift; sourceTree = "<group>"; };
 		D905EB9829A2AC6D00B34F6C /* TabBarState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarState.swift; sourceTree = "<group>"; };
 		D94413CC29A12A7E00D156C1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D95A758029A7B0600049715D /* TabBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarButton.swift; sourceTree = "<group>"; };
 		D97DC9B329A128E200C333A8 /* colors.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = colors.stencil; sourceTree = "<group>"; };
 		D97DC9B529A1294F00C333A8 /* Colors.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Colors.txt; sourceTree = "<group>"; };
 		D97DC9B629A1299800C333A8 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 		D905EB9029A292C400B34F6C /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
+				D95A757F29A7B0470049715D /* UI */,
 				D905EB9529A2AC3800B34F6C /* Redux */,
 				D905EB9129A292DA00B34F6C /* TabBar.swift */,
 				D905EB9329A29F1F00B34F6C /* TabBarCoordinator.swift */,
@@ -109,6 +112,14 @@
 				D905EB9829A2AC6D00B34F6C /* TabBarState.swift */,
 			);
 			path = Redux;
+			sourceTree = "<group>";
+		};
+		D95A757F29A7B0470049715D /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				D95A758029A7B0600049715D /* TabBarButton.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 		D97DC9B029A1287D00C333A8 /* Resources */ = {
@@ -438,6 +449,7 @@
 				D99C123429A15BCE00BB8C7B /* TaskServiceAssembly.swift in Sources */,
 				D905EB9229A292DA00B34F6C /* TabBar.swift in Sources */,
 				D905EB9429A29F1F00B34F6C /* TabBarCoordinator.swift in Sources */,
+				D95A758129A7B0600049715D /* TabBarButton.swift in Sources */,
 				D99C122529A136BD00BB8C7B /* MainTaskModel.swift in Sources */,
 				D99C121C29A135D400BB8C7B /* TaskCell.swift in Sources */,
 				D99C122629A136BD00BB8C7B /* MainCoordinator.swift in Sources */,
