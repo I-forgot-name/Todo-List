@@ -17,7 +17,7 @@ struct TabBarButton: View {
             VStack {
                 Image(systemName: imageName)
                     .resizable()
-                    .foregroundColor(isActive ? .accent: .accent.opacity(0.5))
+                    .foregroundColor(isActive ? .main: .main.opacity(0.5))
                     .scaledToFit()
             }
             .frame(width: geo.size.width, height: geo.size.height)

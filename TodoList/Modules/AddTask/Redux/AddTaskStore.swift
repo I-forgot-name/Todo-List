@@ -9,6 +9,7 @@ import Foundation
 
 enum AddTaskAction {
     case didChangeTitle(String)
+    case didTapCreate
 }
 
 final class AddTaskStore: ObservableObject {
@@ -34,6 +35,8 @@ private final class AddTaskReducer {
         switch action {
         case .didChangeTitle(let title):
             state.title = title
+        case .didTapCreate:
+            break;
         }
     }
 }

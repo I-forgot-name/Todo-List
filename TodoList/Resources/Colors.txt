@@ -1,1 +1,2 @@
-accent: #272643
+main: #272643
+appBlue: #2c698d

@@ -11,6 +11,13 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
 
+  internal enum AddTask {
+    internal enum Title {
+      /// Title
+      internal static let name = L10n.tr("Localizable", "AddTask.Title.name")
+    }
+  }
+
   internal enum Main {
     internal enum Title {
       /// Your tasks

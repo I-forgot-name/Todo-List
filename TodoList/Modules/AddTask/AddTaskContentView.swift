@@ -6,10 +6,41 @@
 //
 
 import SwiftUI
+import Combine
 
 struct AddTaskContentView: View {
+
+    @EnvironmentObject private var store: AddTaskStore
+    @State var text: String = ""
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            VStack {
+                HStack {
+                    TextField("Title", text: $text)
+                        .onChange(of: text, perform: { newValue in
+                            store.dispatch(.didChangeTitle(text))
+                        })
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .navigationTitle("Create task")
+                }
+
+                Spacer()
+
+                Button {
+                    store.dispatch(.didTapCreate)
+                } label: {
+                    Text("Create")
+                }
+                .padding()
+                .background(Color.main)
+                .foregroundColor(.white)
+                .clipShape(RoundedRectangle(cornerRadius: 5))
+                .font(.bold(.title3)())
+
+            }
+            .padding(.horizontal, 20)
+        }
     }
 }
 
