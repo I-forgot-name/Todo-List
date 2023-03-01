@@ -28,18 +28,9 @@ struct MainContentView: View {
                     Section (footer:
                                 GeometryReader { geo in
                         HStack (alignment: .center) {
-
-                            Button {
+                            MainButton(title: L10n.Main.Button.addTask) {
                                 isPresented.toggle()
-                            } label: {
-                                Text("Add task")
-                                    .frame(height: 44)
-                                    .padding(.horizontal)
-                                    .font(.bold(.title3)())
                             }
-                            .foregroundColor(.white)
-                            .background(Color.main)
-                            .clipShape(RoundedRectangle(cornerRadius: 5))
                             .sheet(isPresented: $isPresented) {
                                 addTaskCoordinator.start()
                             }

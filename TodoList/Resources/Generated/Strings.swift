@@ -19,6 +19,10 @@ internal enum L10n {
   }
 
   internal enum Main {
+    internal enum Button {
+      /// Add
+      internal static let addTask = L10n.tr("Localizable", "Main.Button.AddTask")
+    }
     internal enum Title {
       /// Your tasks
       internal static let yourTask = L10n.tr("Localizable", "Main.Title.yourTask")

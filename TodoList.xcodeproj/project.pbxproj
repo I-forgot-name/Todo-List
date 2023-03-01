@@ -40,6 +40,7 @@
 		D9D6589E297497DC00C3F089 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D6589D297497DC00C3F089 /* Persistence.swift */; };
 		D9D658A1297497DC00C3F089 /* TodoList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D9D6589F297497DC00C3F089 /* TodoList.xcdatamodeld */; };
 		D9D977D629AD5CD500544544 /* AddTaskCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D977D529AD5CD500544544 /* AddTaskCoordinator.swift */; };
+		D9D977DA29AFDE4900544544 /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D977D929AFDE4900544544 /* MainButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +82,7 @@
 		D9D6589D297497DC00C3F089 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		D9D658A0297497DC00C3F089 /* TodoList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TodoList.xcdatamodel; sourceTree = "<group>"; };
 		D9D977D529AD5CD500544544 /* AddTaskCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskCoordinator.swift; sourceTree = "<group>"; };
+		D9D977D929AFDE4900544544 /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +211,7 @@
 		D99C121A29A133E300BB8C7B /* UIReusableComponents */ = {
 			isa = PBXGroup;
 			children = (
+				D9D977D829AFDE3700544544 /* Buttons */,
 			);
 			path = UIReusableComponents;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 		D99C122A29A136F900BB8C7B /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				D9D977D729AFDE2B00544544 /* Views */,
 				D99C121929A133CF00BB8C7B /* Cells */,
 			);
 			path = UI;
@@ -329,6 +333,21 @@
 				D99C121A29A133E300BB8C7B /* UIReusableComponents */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		D9D977D729AFDE2B00544544 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D9D977D829AFDE3700544544 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				D9D977D929AFDE4900544544 /* MainButton.swift */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 		F7FC25083C4AD5C4A2663F23 /* Frameworks */ = {
@@ -491,6 +510,7 @@
 				D905EB9229A292DA00B34F6C /* TabBar.swift in Sources */,
 				D905EB9429A29F1F00B34F6C /* TabBarCoordinator.swift in Sources */,
 				D9D977D629AD5CD500544544 /* AddTaskCoordinator.swift in Sources */,
+				D9D977DA29AFDE4900544544 /* MainButton.swift in Sources */,
 				D97A77C229AAB72200F1AA26 /* AddTaskActionCreator.swift in Sources */,
 				D97A77BE29AAB70700F1AA26 /* AddTaskStore.swift in Sources */,
 				D95A758129A7B0600049715D /* TabBarButton.swift in Sources */,

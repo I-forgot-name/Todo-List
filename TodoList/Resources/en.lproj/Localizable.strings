@@ -7,5 +7,6 @@
 */
 
 "Main.Title.yourTask" = "Your tasks";
+"Main.Button.AddTask" = "Add";
 
 "AddTask.Title.name" = "Title";
