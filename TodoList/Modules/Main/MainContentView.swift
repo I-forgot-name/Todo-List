@@ -48,9 +48,6 @@ struct MainContentView: View {
                         }
                     }
 
-                    Section {
-
-                    }
                 }
                 .listStyle(.insetGrouped)
                 .onAppear {
