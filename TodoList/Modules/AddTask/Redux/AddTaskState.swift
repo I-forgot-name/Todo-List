@@ -6,5 +6,11 @@
 //
 
 struct AddTaskState: Equatable {
+    enum AddTaskStatus: Equatable {
+        case idle
+        case load
+        case error
+    }
     var title: String = ""
+    var addTaskStatus: AddTaskStatus = .idle
 }

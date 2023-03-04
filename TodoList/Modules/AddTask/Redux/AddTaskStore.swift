@@ -36,7 +36,15 @@ private final class AddTaskReducer {
         case .didChangeTitle(let title):
             state.title = title
         case .didTapCreate:
-            break;
+            updateAddTaskStatus(.load, in: &state)
         }
+    }
+
+    private func updateAddTaskStatus(
+        _ status: AddTaskState.AddTaskStatus,
+        in state: inout AddTaskState
+    ) {
+        guard state.addTaskStatus != status else { return }
+        state.addTaskStatus = status
     }
 }
