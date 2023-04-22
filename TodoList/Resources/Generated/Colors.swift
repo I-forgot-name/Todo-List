@@ -7,8 +7,10 @@ import SwiftUI
 
 extension UIColor {
 
+    /// 0x2c698dff
+    static let appBlue = UIColor(rgbaValue: 0x2c698dff)
     /// 0x272643ff
-    static let accent = UIColor(rgbaValue: 0x272643ff)
+    static let main = UIColor(rgbaValue: 0x272643ff)
 
     convenience init(rgbaValue: UInt32) {
         self.init(
@@ -21,8 +23,10 @@ extension UIColor {
 }
 
 extension Color {
+    /// 0x2c698dff
+    static let appBlue = Color(rgbaValue: 0x2c698dff)
     /// 0x272643ff
-    static let accent = Color(rgbaValue: 0x272643ff)
+    static let main = Color(rgbaValue: 0x272643ff)
 
     init(rgbaValue: UInt32) {
         self.init(

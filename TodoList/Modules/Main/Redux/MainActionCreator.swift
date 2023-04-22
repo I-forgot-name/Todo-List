@@ -6,20 +6,25 @@
 //
 
 import Combine
+import Foundation
 
 final class MainActionCreator {
     private weak var store: MainStore?
     private let service: ITasksService
     private var cancelBag = Set<AnyCancellable>()
 
+    private let repository: DBRepository<TaskDomainModel, TaskEntity>
+
     // MARK: - Init
 
     init(
         store: MainStore,
-        service: ITasksService
+        service: ITasksService,
+        repository: DBRepository<TaskDomainModel, TaskEntity>
     ) {
         self.store = store
         self.service = service
+        self.repository = repository
         bind()
     }
 
@@ -41,15 +46,32 @@ final class MainActionCreator {
     }
 
     func getTasks() {
-        service.getTasks { [weak self] result in
-            guard let self = self else { return }
+        repository.present(by: TaskSearchRequest()) { [weak self] result in
+            guard let store = self?.store else {
+                return
+            }
             switch result {
             case .success(let tasks):
                 let tasks: [MainTaskModel] = tasks.map { .init($0) }
-                self.store?.dispatch(.completeLoadTasks(.success(tasks)))
+                    store.dispatch(.completeLoadTasks(.success(tasks)))
             case .failure(let error):
                 print(error)
             }
         }
     }
+
+
+
+//    func getTasks() {
+//        service.getTasks { [weak self] result in
+//            guard let self = self else { return }
+//            switch result {
+//            case .success(let tasks):
+//                let tasks: [MainTaskModel] = tasks.map { .init($0) }
+//                self.store?.dispatch(.completeLoadTasks(.success(tasks)))
+//            case .failure(let error):
+//                print(error)
+//            }
+//        }
+//    }
 }

@@ -15,4 +15,10 @@ struct MainTaskModel: Equatable, Hashable {
         title = model.title
         isComplete = model.isComplete
     }
+
+    init(_ model: TaskDomainModel) {
+        id = model.id
+        title = model.title
+        isComplete = model.isComplete
+    }
 }

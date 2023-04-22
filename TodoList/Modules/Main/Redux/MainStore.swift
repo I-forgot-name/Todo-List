@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 enum MainAction {
     case onAppear
@@ -16,6 +17,7 @@ enum MainAction {
 
 final class MainStore: ObservableObject {
     private var reducer = MainReducer()
+    
     @Published var state: MainState
 
     init(state: MainState) {
@@ -24,12 +26,16 @@ final class MainStore: ObservableObject {
     
     func dispatch(_ action: MainAction) {
         self.debug("action: \(action)")
-        self.reducer.reduce(&self.state, action)
-    }
+        DispatchQueue.main.async {
+            self.reducer.reduce(&self.state, action)
+            }
+        }
     
     private func debug(_ msg: String) {
         print("[MainStore]: \(msg)")
     }
+
+//    var stream: CurrentValueSubject<MainState, Error>
 }
 
 private final class MainReducer {

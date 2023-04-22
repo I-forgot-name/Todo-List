@@ -13,4 +13,6 @@ struct MainState: Equatable {
     }
     var loadingStatus: LoadingStatus = LoadingStatus.idle
     var tasks: [MainTaskModel] = []
+
+    
 }
