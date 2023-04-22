@@ -10,6 +10,8 @@ import Foundation
 enum AddTaskAction {
     case didChangeTitle(String)
     case didTapCreate
+
+    case completeAddTask
 }
 
 final class AddTaskStore: ObservableObject {
@@ -37,6 +39,8 @@ private final class AddTaskReducer {
             state.title = title
         case .didTapCreate:
             updateAddTaskStatus(.load, in: &state)
+        case .completeAddTask:
+            updateAddTaskStatus(.idle, in: &state)
         }
     }
 

@@ -15,7 +15,12 @@ struct TodoListApp: App {
     let persistenceController = PersistenceController.shared
     private let tabBarCoordinator: TabBarCoordinator
 
-    private let assembler = Assembler([TaskServiceAssembly()])
+    private let assembler = Assembler(
+        [
+            TaskServiceAssembly(),
+            IDBContextProviderAssembly()
+        ]
+    )
     init() {
         FirebaseConfiguration.shared.setLoggerLevel(.min)
 

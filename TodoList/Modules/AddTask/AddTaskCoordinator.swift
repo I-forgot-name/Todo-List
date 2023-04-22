@@ -18,7 +18,16 @@ final class AddTaskCoordinator {
     func start() -> some View {
         let state = AddTaskState()
         let store = AddTaskStore(state: state)
-        let view = AddTaskContentView().environmentObject(store)
+        let contextProvider = assembler.resolver.resolve(IDBContextProvider.self)!
+        let ac = AddTaskActionCreator(
+            store: store,
+            service: assembler.resolver.resolve(ITasksService.self)!,
+            repository: DBRepository(
+                contextProvider: contextProvider,
+                entityMapper: TaskEntityMapper()
+            )
+        )
+        let view = AddTaskContentView(ac: ac).environmentObject(store)
         return view
     }
 }

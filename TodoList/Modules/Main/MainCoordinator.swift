@@ -20,7 +20,12 @@ final class MainCoordinator {
     func start() -> some View {
         let state = MainState()
         let store = MainStore(state: state)
-        let ac = MainActionCreator(store: store, service: assembler.resolver.resolve(ITasksService.self)!)
+        let contextProvider = assembler.resolver.resolve(IDBContextProvider.self)!
+        let ac = MainActionCreator(
+            store: store,
+            service: assembler.resolver.resolve(ITasksService.self)!,
+            repository: DBRepository(contextProvider: contextProvider, entityMapper: TaskEntityMapper())
+        )
         let cv = MainContentView(ac: ac, addTaskCoordinator: addTaskCoordinator).environmentObject(store)
         return cv
     }

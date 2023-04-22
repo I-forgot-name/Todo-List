@@ -11,7 +11,12 @@ import Combine
 struct AddTaskContentView: View {
 
     @EnvironmentObject private var store: AddTaskStore
+    private let ac: AddTaskActionCreator
     @State var text: String = ""
+
+    init(ac: AddTaskActionCreator) {
+        self.ac = ac
+    }
 
     var body: some View {
         NavigationView {
@@ -41,11 +46,5 @@ struct AddTaskContentView: View {
             }
             .padding(.horizontal, 20)
         }
-    }
-}
-
-struct AddTaskContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddTaskContentView()
     }
 }

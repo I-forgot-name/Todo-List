@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MainContentView: View {
-
+    
     @EnvironmentObject private var store: MainStore
     private let ac: MainActionCreator
     private let addTaskCoordinator: AddTaskCoordinator
@@ -25,11 +25,11 @@ struct MainContentView: View {
         NavigationView {
             VStack {
                 List {
-                    Section (footer:
-                                GeometryReader { geo in
+                    Section (footer: GeometryReader { geo in
                         HStack (alignment: .center) {
                             MainButton(title: L10n.Main.Button.addTask) {
                                 isPresented.toggle()
+                                
                             }
                             .sheet(isPresented: $isPresented) {
                                 addTaskCoordinator.start()
