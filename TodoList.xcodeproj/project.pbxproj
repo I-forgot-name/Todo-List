@@ -17,6 +17,9 @@
 		D905EB9929A2AC6D00B34F6C /* TabBarState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D905EB9829A2AC6D00B34F6C /* TabBarState.swift */; };
 		D911D96329F427E0003A485B /* TaskSearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D911D96229F427E0003A485B /* TaskSearchRequest.swift */; };
 		D911D96629F42988003A485B /* IDBContextProviderAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D911D96529F42988003A485B /* IDBContextProviderAssembly.swift */; };
+		D91BF14E29F5A70300DD2197 /* DBRepositoryBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91BF14D29F5A70300DD2197 /* DBRepositoryBuilder.swift */; };
+		D91BF15129F5AFBF00DD2197 /* MainContentViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91BF15029F5AFBF00DD2197 /* MainContentViewBuilder.swift */; };
+		D91BF15329F5B00C00DD2197 /* MainActionCreatorBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91BF15229F5B00C00DD2197 /* MainActionCreatorBuilder.swift */; };
 		D94413CB29A12A7E00D156C1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D94413CD29A12A7E00D156C1 /* Localizable.strings */; };
 		D9576AD029F4121F00549F6E /* DBRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9576ACF29F4121F00549F6E /* DBRepository.swift */; };
 		D9576AD229F4124900549F6E /* IDBContextProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9576AD129F4124900549F6E /* IDBContextProvider.swift */; };
@@ -67,6 +70,9 @@
 		D905EB9829A2AC6D00B34F6C /* TabBarState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarState.swift; sourceTree = "<group>"; };
 		D911D96229F427E0003A485B /* TaskSearchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskSearchRequest.swift; sourceTree = "<group>"; };
 		D911D96529F42988003A485B /* IDBContextProviderAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDBContextProviderAssembly.swift; sourceTree = "<group>"; };
+		D91BF14D29F5A70300DD2197 /* DBRepositoryBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBRepositoryBuilder.swift; sourceTree = "<group>"; };
+		D91BF15029F5AFBF00DD2197 /* MainContentViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentViewBuilder.swift; sourceTree = "<group>"; };
+		D91BF15229F5B00C00DD2197 /* MainActionCreatorBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainActionCreatorBuilder.swift; sourceTree = "<group>"; };
 		D94413CC29A12A7E00D156C1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D9576ACF29F4121F00549F6E /* DBRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBRepository.swift; sourceTree = "<group>"; };
 		D9576AD129F4124900549F6E /* IDBContextProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDBContextProvider.swift; sourceTree = "<group>"; };
@@ -139,6 +145,7 @@
 				D9576AD329F4126100549F6E /* DBContextProvider.swift */,
 				D9576AD529F4131A00549F6E /* DBEntityMapper.swift */,
 				D9576AD729F4136300549F6E /* DBRepositoryError.swift */,
+				D91BF14D29F5A70300DD2197 /* DBRepositoryBuilder.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -169,6 +176,15 @@
 				D911D96529F42988003A485B /* IDBContextProviderAssembly.swift */,
 			);
 			path = Assembly;
+			sourceTree = "<group>";
+		};
+		D91BF14F29F5AFB100DD2197 /* Builders */ = {
+			isa = PBXGroup;
+			children = (
+				D91BF15029F5AFBF00DD2197 /* MainContentViewBuilder.swift */,
+				D91BF15229F5B00C00DD2197 /* MainActionCreatorBuilder.swift */,
+			);
+			path = Builders;
 			sourceTree = "<group>";
 		};
 		D9576ACE29F40F9500549F6E /* Storage */ = {
@@ -283,6 +299,7 @@
 		D99C121D29A136BD00BB8C7B /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				D91BF14F29F5AFB100DD2197 /* Builders */,
 				D99C122A29A136F900BB8C7B /* UI */,
 				D99C121E29A136BD00BB8C7B /* Models */,
 				D99C122029A136BD00BB8C7B /* MainCoordinator.swift */,
@@ -576,7 +593,10 @@
 				D99C122729A136BD00BB8C7B /* MainContentView.swift in Sources */,
 				D99C123429A15BCE00BB8C7B /* TaskServiceAssembly.swift in Sources */,
 				D9576AD629F4131A00549F6E /* DBEntityMapper.swift in Sources */,
+				D91BF15329F5B00C00DD2197 /* MainActionCreatorBuilder.swift in Sources */,
+				D91BF15129F5AFBF00DD2197 /* MainContentViewBuilder.swift in Sources */,
 				D97A77BA29AAB5EA00F1AA26 /* AddTaskContentView.swift in Sources */,
+				D91BF14E29F5A70300DD2197 /* DBRepositoryBuilder.swift in Sources */,
 				D905EB9229A292DA00B34F6C /* TabBar.swift in Sources */,
 				D905EB9429A29F1F00B34F6C /* TabBarCoordinator.swift in Sources */,
 				D9576AD229F4124900549F6E /* IDBContextProvider.swift in Sources */,
