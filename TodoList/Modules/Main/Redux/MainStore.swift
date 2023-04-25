@@ -15,6 +15,8 @@ enum MainAction {
     case completeLoadTasks(Result<[MainTaskModel], Error>)
 }
 
+// MARK: MainStore
+
 final class MainStore: ObservableObject {
     private var reducer = MainReducer()
     
@@ -34,9 +36,9 @@ final class MainStore: ObservableObject {
     private func debug(_ msg: String) {
         print("[MainStore]: \(msg)")
     }
-
-//    var stream: CurrentValueSubject<MainState, Error>
 }
+
+// MARK: MainReducer
 
 private final class MainReducer {
     func reduce(_ state: inout MainState, _ action: MainAction) {
@@ -73,7 +75,7 @@ private final class MainReducer {
         case .success(let tasks):
             state.tasks = tasks
             updateLoadingStatus(.idle, in: &state)
-        case .failure(let error):
+        case .failure(_):
             updateLoadingStatus(.error, in: &state)
         }
     }

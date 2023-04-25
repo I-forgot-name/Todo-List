@@ -29,7 +29,6 @@ struct MainContentView: View {
                         HStack (alignment: .center) {
                             MainButton(title: L10n.Main.Button.addTask) {
                                 isPresented.toggle()
-                                
                             }
                             .sheet(isPresented: $isPresented) {
                                 addTaskCoordinator.start()
@@ -37,17 +36,13 @@ struct MainContentView: View {
                         }
                         .frame(maxWidth: geo.size.width, minHeight: geo.size.height)
                     }
-                    .frame(minHeight: 60)
-
-
-                    ) {
+                    .frame(minHeight: 60)) {
                         ForEach(store.state.tasks, id: \.self) { task in
                             TaskCell(model: TaskCellModel.init(title: task.title, isOn: task.isComplete)) {
                                 store.dispatch(.didTapCheckmark(id: task.id))
                             }
                         }
                     }
-
                 }
                 .listStyle(.insetGrouped)
                 .onAppear {
