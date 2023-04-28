@@ -6,8 +6,6 @@
 //
 
 import SwiftUI
-import FirebaseCore
-import FirebaseFirestore
 import struct Storage.IContextProviderAssembly
 import Swinject
 
@@ -17,14 +15,10 @@ struct TodoListApp: App {
 
     private let assembler = Assembler(
         [
-            TaskServiceAssembly(),
             IContextProviderAssembly()
         ]
     )
     init() {
-        FirebaseConfiguration.shared.setLoggerLevel(.min)
-
-        FirebaseApp.configure()
         tabBarCoordinator = .init(assembler) 
     }
 

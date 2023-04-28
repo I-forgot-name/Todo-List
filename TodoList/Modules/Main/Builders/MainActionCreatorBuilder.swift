@@ -16,7 +16,6 @@ struct MainActionCreatorBuilder {
     private let storage: StorageCore<TaskDomainModel, TaskEntity>
 
     private let contextProvider: IContextProvider
-    private let service: ITasksService
 
     private let mapper = TaskEntityMapper()
 
@@ -30,7 +29,6 @@ struct MainActionCreatorBuilder {
             request: TaskSearchRequest(),
             mapper: mapper
         )
-        service = assembler.resolver.resolve(ITasksService.self)!
     }
 
 //    MARK: Functions

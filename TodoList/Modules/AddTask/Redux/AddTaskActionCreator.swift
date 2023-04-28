@@ -10,18 +10,15 @@ import Storage
 
 final class AddTaskActionCreator {
     private weak var store: AddTaskStore?
-    private let service: ITasksService
     private var cancelBag = Set<AnyCancellable>()
 
     private let storage: StorageCore<TaskDomainModel, TaskEntity>
     
     init(
         store: AddTaskStore,
-        service: ITasksService,
         storage: StorageCore<TaskDomainModel, TaskEntity>
     ) {
         self.store = store
-        self.service = service
         self.storage = storage
         bind()
     }

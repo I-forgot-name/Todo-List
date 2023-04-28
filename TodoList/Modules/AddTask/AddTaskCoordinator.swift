@@ -22,7 +22,6 @@ final class AddTaskCoordinator {
         let contextProvider = assembler.resolver.resolve(IContextProvider.self)!
         let ac = AddTaskActionCreator(
             store: store,
-            service: assembler.resolver.resolve(ITasksService.self)!,
             storage: StorageCore(
                 contextProvider: contextProvider,
                 autoUpdateSearchRequest: TaskSearchRequest(),

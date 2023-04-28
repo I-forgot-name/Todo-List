@@ -10,12 +10,6 @@ struct MainTaskModel: Equatable, Hashable {
     let title: String
     var isComplete: Bool
 
-    init(_ model: TaskResponseModel) {
-        id = model.id
-        title = model.title
-        isComplete = model.isComplete
-    }
-
     init(_ model: TaskDomainModel) {
         id = model.id
         title = model.title
