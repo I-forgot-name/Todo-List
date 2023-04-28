@@ -21,6 +21,7 @@
 		D9540ADF29FAC3AA001403D7 /* Storage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D9540A3929FAB631001403D7 /* Storage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D9540B0229FB1B3B001403D7 /* DesignKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9540B0129FB1B3B001403D7 /* DesignKit.framework */; };
 		D9540B0329FB1B3B001403D7 /* DesignKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D9540B0129FB1B3B001403D7 /* DesignKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D9540B0F29FBDEFA001403D7 /* MainList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9540B0E29FBDEFA001403D7 /* MainList.swift */; };
 		D9576ADB29F4145B00549F6E /* TaskDomainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9576ADA29F4145B00549F6E /* TaskDomainModel.swift */; };
 		D9576ADD29F414A400549F6E /* TaskMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9576ADC29F414A400549F6E /* TaskMapper.swift */; };
 		D95A758129A7B0600049715D /* TabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95A758029A7B0600049715D /* TabBarButton.swift */; };
@@ -97,6 +98,7 @@
 		D9540A3229FAB631001403D7 /* Storage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Storage.h; sourceTree = "<group>"; };
 		D9540A3329FAB631001403D7 /* Storage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Storage.xcodeproj; sourceTree = "<group>"; };
 		D9540B0129FB1B3B001403D7 /* DesignKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DesignKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9540B0E29FBDEFA001403D7 /* MainList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainList.swift; sourceTree = "<group>"; };
 		D9576ADA29F4145B00549F6E /* TaskDomainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDomainModel.swift; sourceTree = "<group>"; };
 		D9576ADC29F414A400549F6E /* TaskMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskMapper.swift; sourceTree = "<group>"; };
 		D95A758029A7B0600049715D /* TabBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarButton.swift; sourceTree = "<group>"; };
@@ -444,6 +446,7 @@
 		D9D977D729AFDE2B00544544 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D9540B0E29FBDEFA001403D7 /* MainList.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -642,6 +645,7 @@
 				D905EB9229A292DA00B34F6C /* TabBar.swift in Sources */,
 				D905EB9429A29F1F00B34F6C /* TabBarCoordinator.swift in Sources */,
 				D9D977D629AD5CD500544544 /* AddTaskCoordinator.swift in Sources */,
+				D9540B0F29FBDEFA001403D7 /* MainList.swift in Sources */,
 				D9D977DA29AFDE4900544544 /* MainButton.swift in Sources */,
 				D97A77C229AAB72200F1AA26 /* AddTaskActionCreator.swift in Sources */,
 				D97A77BE29AAB70700F1AA26 /* AddTaskStore.swift in Sources */,
@@ -722,7 +726,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -776,7 +780,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

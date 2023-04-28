@@ -9,10 +9,7 @@ import Foundation
 import Combine
 
 enum MainAction {
-    case onAppear
     case didTapCheckmark(id: String)
-
-    case completeLoadTasks(Result<[MainTaskModel], Error>)
 
     case tasksStorageChanched([MainTaskModel])
 }
@@ -30,10 +27,8 @@ final class MainStore: ObservableObject {
     
     func dispatch(_ action: MainAction) {
         self.debug("action: \(action)")
-        DispatchQueue.main.async {
-            self.reducer.reduce(&self.state, action)
-            }
-        }
+        self.reducer.reduce(&self.state, action)
+       }
     
     private func debug(_ msg: String) {
         print("[MainStore]: \(msg)")
@@ -45,8 +40,6 @@ final class MainStore: ObservableObject {
 private final class MainReducer {
     func reduce(_ state: inout MainState, _ action: MainAction) {
         switch action {
-        case .onAppear:
-            updateLoadingStatus(.load, in: &state)
         case .didTapCheckmark(let id):
             guard let index = state.tasks.firstIndex(where: { model in
                 model.id == id
@@ -55,32 +48,8 @@ private final class MainReducer {
             }
 
             state.tasks[index].isComplete.toggle()
-        case .completeLoadTasks(let result):
-            handleResultLoad(for: result, in: &state)
         case .tasksStorageChanched(let tasks):
             state.tasks = tasks
-        }
-    }
-
-    private func updateLoadingStatus(
-        _ status: MainState.LoadingStatus,
-        in state: inout MainState
-    ) {
-        guard state.loadingStatus != status else { return }
-        state.loadingStatus = status
-    }
-
-    private func handleResultLoad(
-        for result: Result<[MainTaskModel], Error>,
-        in state: inout MainState
-    ) {
-
-        switch result {
-        case .success(let tasks):
-            state.tasks = tasks
-            updateLoadingStatus(.idle, in: &state)
-        case .failure(_):
-            updateLoadingStatus(.error, in: &state)
         }
     }
 }

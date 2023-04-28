@@ -23,37 +23,17 @@ struct MainContentView: View {
 
     var body: some View {
         NavigationView {
-            VStack {
-                List {
-                    Section (footer: GeometryReader { geo in
-                        HStack (alignment: .center) {
-                            MainButton(title: L10n.Main.Button.addTask) {
-                                isPresented.toggle()
-                            }
-                            .sheet(isPresented: $isPresented) {
-                                addTaskCoordinator.start()
-                            }
-                        }
-                        .frame(maxWidth: geo.size.width, minHeight: geo.size.height)
-                    }
-                    .frame(minHeight: 60)) {
-                        ForEach(store.state.tasks, id: \.self) { task in
-                            TaskCell(model: TaskCellModel.init(title: task.title, isOn: task.isComplete)) {
-                                store.dispatch(.didTapCheckmark(id: task.id))
-                            }
-                        }
-                    }
-                }
-                .listStyle(.insetGrouped)
-                .onAppear {
-                    UITableView.appearance().backgroundColor = .appBlue.withAlphaComponent(0.1)
-                }
+            MainList(models: store.state.tasks, isPresented: $isPresented) {
+                store.dispatch(.didTapCheckmark(id: $0))
+            } delete: {
+                ac.delete(id: $0.id)
             }
             .navigationTitle(L10n.Main.Title.yourTask)
         }
         .background(Color.red)
-        .onAppear {
-            store.dispatch(.onAppear)
+        .sheet(isPresented: $isPresented) {
+            addTaskCoordinator.start()
+            
         }
     }
 }

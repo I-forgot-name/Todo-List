@@ -34,4 +34,9 @@ final class MainActionCreator {
         }
         .store(in: &cancelBag)
     }
+
+    func delete(id: String) {
+        let request = TaskSearchRequest(predicate: NSPredicate(format: "id == %@", id), sortDescriptors: [])
+        storage.delete(by: request)
+    }
 }
