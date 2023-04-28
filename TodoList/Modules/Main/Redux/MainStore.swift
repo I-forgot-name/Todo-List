@@ -13,6 +13,8 @@ enum MainAction {
     case didTapCheckmark(id: String)
 
     case completeLoadTasks(Result<[MainTaskModel], Error>)
+
+    case tasksStorageChanched([MainTaskModel])
 }
 
 // MARK: MainStore
@@ -55,6 +57,8 @@ private final class MainReducer {
             state.tasks[index].isComplete.toggle()
         case .completeLoadTasks(let result):
             handleResultLoad(for: result, in: &state)
+        case .tasksStorageChanched(let tasks):
+            state.tasks = tasks
         }
     }
 

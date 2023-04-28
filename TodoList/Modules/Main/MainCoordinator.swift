@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Swinject
+import Storage
 
 final class MainCoordinator {
     private let assembler: Assembler

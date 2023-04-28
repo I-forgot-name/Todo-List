@@ -5,22 +5,24 @@
 //  Created by MacBook Pro on 26.02.2023.
 //
 import Combine
+import SwiftUI
+import Storage
 
 final class AddTaskActionCreator {
     private weak var store: AddTaskStore?
     private let service: ITasksService
     private var cancelBag = Set<AnyCancellable>()
 
-    private let repository: DBRepository<TaskDomainModel, TaskEntity>
-
+    private let storage: StorageCore<TaskDomainModel, TaskEntity>
+    
     init(
         store: AddTaskStore,
         service: ITasksService,
-        repository: DBRepository<TaskDomainModel, TaskEntity>
+        storage: StorageCore<TaskDomainModel, TaskEntity>
     ) {
         self.store = store
         self.service = service
-        self.repository = repository
+        self.storage = storage
         bind()
     }
 
@@ -42,14 +44,7 @@ final class AddTaskActionCreator {
     }
 
     func add(task model: TaskDomainModel) {
-        repository.save([model]) { [weak self] result in
-            guard let store = self?.store else { return }
-            switch result {
-            case .success:
-                store.dispatch(.completeAddTask)
-            case .failure(let error):
-                print("=== [save] \(model.self) is - error(\(error)")
-            }
-        }
+        storage.save([model])
+        store?.dispatch(.completeAddTask)
     }
 }

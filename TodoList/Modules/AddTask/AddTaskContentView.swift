@@ -13,6 +13,7 @@ struct AddTaskContentView: View {
     @EnvironmentObject private var store: AddTaskStore
     private let ac: AddTaskActionCreator
     @State var text: String = ""
+    @Environment(\.presentationMode) var presentationMode
 
     init(ac: AddTaskActionCreator) {
         self.ac = ac
@@ -34,6 +35,7 @@ struct AddTaskContentView: View {
 
                 Button {
                     store.dispatch(.didTapCreate)
+                    presentationMode.wrappedValue.dismiss()
                 } label: {
                     Text("Create")
                 }

@@ -8,17 +8,17 @@
 import SwiftUI
 import FirebaseCore
 import FirebaseFirestore
+import struct Storage.IContextProviderAssembly
 import Swinject
 
 @main
 struct TodoListApp: App {
-    let persistenceController = PersistenceController.shared
     private let tabBarCoordinator: TabBarCoordinator
 
     private let assembler = Assembler(
         [
             TaskServiceAssembly(),
-            IDBContextProviderAssembly()
+            IContextProviderAssembly()
         ]
     )
     init() {
@@ -31,7 +31,6 @@ struct TodoListApp: App {
     var body: some Scene {
         WindowGroup {
             tabBarCoordinator.start()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }

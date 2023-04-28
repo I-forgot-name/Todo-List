@@ -1,5 +1,5 @@
 //
-//  IDBContextProvider.swift
+//  IContextProvider.swift
 //  TodoList
 //
 //  Created by MacBook Pro on 22.04.2023.
@@ -7,7 +7,7 @@
 
 import CoreData
 
-protocol IDBContextProvider {
+public protocol IContextProvider {
 
     /// Контекст с которым работает main поток
     /// - Returns: Контекст

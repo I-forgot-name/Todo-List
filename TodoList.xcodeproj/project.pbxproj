@@ -7,25 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5BE770A86FF0C951DEB08F87 /* Pods_TodoList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6357758B64A2647693C28315 /* Pods_TodoList.framework */; };
-		D9058D7729F4100100440FB7 /* IRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9058D7629F4100100440FB7 /* IRepository.swift */; };
-		D9058D7A29F4103F00440FB7 /* IRepositorySearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9058D7929F4103F00440FB7 /* IRepositorySearchRequest.swift */; };
+		1515F337C647971BFE1B9D3B /* Pods_TodoList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDC9BD7DDBC2418562AEDBEA /* Pods_TodoList.framework */; };
 		D905EB8F29A1670100B34F6C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D905EB8E29A1670100B34F6C /* GoogleService-Info.plist */; };
 		D905EB9229A292DA00B34F6C /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D905EB9129A292DA00B34F6C /* TabBar.swift */; };
 		D905EB9429A29F1F00B34F6C /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D905EB9329A29F1F00B34F6C /* TabBarCoordinator.swift */; };
 		D905EB9729A2AC5E00B34F6C /* TabBarStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D905EB9629A2AC5E00B34F6C /* TabBarStore.swift */; };
 		D905EB9929A2AC6D00B34F6C /* TabBarState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D905EB9829A2AC6D00B34F6C /* TabBarState.swift */; };
 		D911D96329F427E0003A485B /* TaskSearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D911D96229F427E0003A485B /* TaskSearchRequest.swift */; };
-		D911D96629F42988003A485B /* IDBContextProviderAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D911D96529F42988003A485B /* IDBContextProviderAssembly.swift */; };
-		D91BF14E29F5A70300DD2197 /* DBRepositoryBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91BF14D29F5A70300DD2197 /* DBRepositoryBuilder.swift */; };
 		D91BF15129F5AFBF00DD2197 /* MainContentViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91BF15029F5AFBF00DD2197 /* MainContentViewBuilder.swift */; };
 		D91BF15329F5B00C00DD2197 /* MainActionCreatorBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91BF15229F5B00C00DD2197 /* MainActionCreatorBuilder.swift */; };
 		D94413CB29A12A7E00D156C1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D94413CD29A12A7E00D156C1 /* Localizable.strings */; };
-		D9576AD029F4121F00549F6E /* DBRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9576ACF29F4121F00549F6E /* DBRepository.swift */; };
-		D9576AD229F4124900549F6E /* IDBContextProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9576AD129F4124900549F6E /* IDBContextProvider.swift */; };
-		D9576AD429F4126100549F6E /* DBContextProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9576AD329F4126100549F6E /* DBContextProvider.swift */; };
-		D9576AD629F4131A00549F6E /* DBEntityMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9576AD529F4131A00549F6E /* DBEntityMapper.swift */; };
-		D9576AD829F4136300549F6E /* DBRepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9576AD729F4136300549F6E /* DBRepositoryError.swift */; };
+		D9540ADE29FAC3AA001403D7 /* Storage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9540A3929FAB631001403D7 /* Storage.framework */; };
+		D9540ADF29FAC3AA001403D7 /* Storage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D9540A3929FAB631001403D7 /* Storage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D9540B0229FB1B3B001403D7 /* DesignKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9540B0129FB1B3B001403D7 /* DesignKit.framework */; };
+		D9540B0329FB1B3B001403D7 /* DesignKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D9540B0129FB1B3B001403D7 /* DesignKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D9576ADB29F4145B00549F6E /* TaskDomainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9576ADA29F4145B00549F6E /* TaskDomainModel.swift */; };
 		D9576ADD29F414A400549F6E /* TaskMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9576ADC29F414A400549F6E /* TaskMapper.swift */; };
 		D95A758129A7B0600049715D /* TabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95A758029A7B0600049715D /* TabBarButton.swift */; };
@@ -51,34 +46,60 @@
 		D9D65895297497DB00C3F089 /* TodoListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D65894297497DB00C3F089 /* TodoListApp.swift */; };
 		D9D65899297497DC00C3F089 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9D65898297497DC00C3F089 /* Assets.xcassets */; };
 		D9D6589C297497DC00C3F089 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9D6589B297497DC00C3F089 /* Preview Assets.xcassets */; };
-		D9D6589E297497DC00C3F089 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D6589D297497DC00C3F089 /* Persistence.swift */; };
 		D9D658A1297497DC00C3F089 /* TodoList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D9D6589F297497DC00C3F089 /* TodoList.xcdatamodeld */; };
 		D9D977D629AD5CD500544544 /* AddTaskCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D977D529AD5CD500544544 /* AddTaskCoordinator.swift */; };
 		D9D977DA29AFDE4900544544 /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D977D929AFDE4900544544 /* MainButton.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		D9540A3829FAB631001403D7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D9540A3329FAB631001403D7 /* Storage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D95409D729FAB4DC001403D7;
+			remoteInfo = Storage;
+		};
+		D9540A3A29FAB631001403D7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D9540A3329FAB631001403D7 /* Storage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D95409E129FAB4DC001403D7;
+			remoteInfo = StorageTests;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D95409C929FAB367001403D7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D9540ADF29FAC3AA001403D7 /* Storage.framework in Embed Frameworks */,
+				D9540B0329FB1B3B001403D7 /* DesignKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		1230F1DBB52A842C96D97C77 /* Pods-TodoList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoList.debug.xcconfig"; path = "Target Support Files/Pods-TodoList/Pods-TodoList.debug.xcconfig"; sourceTree = "<group>"; };
-		6357758B64A2647693C28315 /* Pods_TodoList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodoList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A93B8ECE0E2DAE2DA187E578 /* Pods-TodoList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoList.release.xcconfig"; path = "Target Support Files/Pods-TodoList/Pods-TodoList.release.xcconfig"; sourceTree = "<group>"; };
-		D9058D7629F4100100440FB7 /* IRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IRepository.swift; sourceTree = "<group>"; };
-		D9058D7929F4103F00440FB7 /* IRepositorySearchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IRepositorySearchRequest.swift; sourceTree = "<group>"; };
 		D905EB8E29A1670100B34F6C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D905EB9129A292DA00B34F6C /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		D905EB9329A29F1F00B34F6C /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
 		D905EB9629A2AC5E00B34F6C /* TabBarStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarStore.swift; sourceTree = "<group>"; };
 		D905EB9829A2AC6D00B34F6C /* TabBarState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarState.swift; sourceTree = "<group>"; };
 		D911D96229F427E0003A485B /* TaskSearchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskSearchRequest.swift; sourceTree = "<group>"; };
-		D911D96529F42988003A485B /* IDBContextProviderAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDBContextProviderAssembly.swift; sourceTree = "<group>"; };
-		D91BF14D29F5A70300DD2197 /* DBRepositoryBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBRepositoryBuilder.swift; sourceTree = "<group>"; };
 		D91BF15029F5AFBF00DD2197 /* MainContentViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentViewBuilder.swift; sourceTree = "<group>"; };
 		D91BF15229F5B00C00DD2197 /* MainActionCreatorBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainActionCreatorBuilder.swift; sourceTree = "<group>"; };
 		D94413CC29A12A7E00D156C1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		D9576ACF29F4121F00549F6E /* DBRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBRepository.swift; sourceTree = "<group>"; };
-		D9576AD129F4124900549F6E /* IDBContextProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDBContextProvider.swift; sourceTree = "<group>"; };
-		D9576AD329F4126100549F6E /* DBContextProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBContextProvider.swift; sourceTree = "<group>"; };
-		D9576AD529F4131A00549F6E /* DBEntityMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBEntityMapper.swift; sourceTree = "<group>"; };
-		D9576AD729F4136300549F6E /* DBRepositoryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBRepositoryError.swift; sourceTree = "<group>"; };
+		D9540A2F29FAB631001403D7 /* StorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageTests.swift; sourceTree = "<group>"; };
+		D9540A3129FAB631001403D7 /* Storage.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Storage.docc; sourceTree = "<group>"; };
+		D9540A3229FAB631001403D7 /* Storage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Storage.h; sourceTree = "<group>"; };
+		D9540A3329FAB631001403D7 /* Storage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Storage.xcodeproj; sourceTree = "<group>"; };
+		D9540B0129FB1B3B001403D7 /* DesignKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DesignKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9576ADA29F4145B00549F6E /* TaskDomainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDomainModel.swift; sourceTree = "<group>"; };
 		D9576ADC29F414A400549F6E /* TaskMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskMapper.swift; sourceTree = "<group>"; };
 		D95A758029A7B0600049715D /* TabBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarButton.swift; sourceTree = "<group>"; };
@@ -107,10 +128,10 @@
 		D9D65894297497DB00C3F089 /* TodoListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListApp.swift; sourceTree = "<group>"; };
 		D9D65898297497DC00C3F089 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D9D6589B297497DC00C3F089 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		D9D6589D297497DC00C3F089 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		D9D658A0297497DC00C3F089 /* TodoList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TodoList.xcdatamodel; sourceTree = "<group>"; };
 		D9D977D529AD5CD500544544 /* AddTaskCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskCoordinator.swift; sourceTree = "<group>"; };
 		D9D977D929AFDE4900544544 /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
+		DDC9BD7DDBC2418562AEDBEA /* Pods_TodoList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodoList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +139,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BE770A86FF0C951DEB08F87 /* Pods_TodoList.framework in Frameworks */,
+				D9540B0229FB1B3B001403D7 /* DesignKit.framework in Frameworks */,
+				D9540ADE29FAC3AA001403D7 /* Storage.framework in Frameworks */,
+				1515F337C647971BFE1B9D3B /* Pods_TodoList.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,15 +160,6 @@
 		D9058D7529F40FF500440FB7 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				D911D96429F42972003A485B /* Assembly */,
-				D9058D7629F4100100440FB7 /* IRepository.swift */,
-				D9058D7929F4103F00440FB7 /* IRepositorySearchRequest.swift */,
-				D9576ACF29F4121F00549F6E /* DBRepository.swift */,
-				D9576AD129F4124900549F6E /* IDBContextProvider.swift */,
-				D9576AD329F4126100549F6E /* DBContextProvider.swift */,
-				D9576AD529F4131A00549F6E /* DBEntityMapper.swift */,
-				D9576AD729F4136300549F6E /* DBRepositoryError.swift */,
-				D91BF14D29F5A70300DD2197 /* DBRepositoryBuilder.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -170,14 +184,6 @@
 			path = Redux;
 			sourceTree = "<group>";
 		};
-		D911D96429F42972003A485B /* Assembly */ = {
-			isa = PBXGroup;
-			children = (
-				D911D96529F42988003A485B /* IDBContextProviderAssembly.swift */,
-			);
-			path = Assembly;
-			sourceTree = "<group>";
-		};
 		D91BF14F29F5AFB100DD2197 /* Builders */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +191,49 @@
 				D91BF15229F5B00C00DD2197 /* MainActionCreatorBuilder.swift */,
 			);
 			path = Builders;
+			sourceTree = "<group>";
+		};
+		D954094429FA9BAF001403D7 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		D9540A2D29FAB631001403D7 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				D9540A2E29FAB631001403D7 /* StorageTests */,
+				D9540A3029FAB631001403D7 /* Storage */,
+				D9540A3329FAB631001403D7 /* Storage.xcodeproj */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		D9540A2E29FAB631001403D7 /* StorageTests */ = {
+			isa = PBXGroup;
+			children = (
+				D9540A2F29FAB631001403D7 /* StorageTests.swift */,
+			);
+			path = StorageTests;
+			sourceTree = "<group>";
+		};
+		D9540A3029FAB631001403D7 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				D9540A3129FAB631001403D7 /* Storage.docc */,
+				D9540A3229FAB631001403D7 /* Storage.h */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		D9540A3429FAB631001403D7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D9540A3929FAB631001403D7 /* Storage.framework */,
+				D9540A3B29FAB631001403D7 /* StorageTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		D9576ACE29F40F9500549F6E /* Storage */ = {
@@ -237,6 +286,7 @@
 		D97A77C329AAB82700F1AA26 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				D954094429FA9BAF001403D7 /* CoreData */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -377,7 +427,6 @@
 			isa = PBXGroup;
 			children = (
 				D905EB8E29A1670100B34F6C /* GoogleService-Info.plist */,
-				D9D6589D297497DC00C3F089 /* Persistence.swift */,
 				D9D65894297497DB00C3F089 /* TodoListApp.swift */,
 				D9D658A82974988B00C3F089 /* Core */,
 				D9D658A72974988400C3F089 /* Modules */,
@@ -435,7 +484,9 @@
 		F7FC25083C4AD5C4A2663F23 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6357758B64A2647693C28315 /* Pods_TodoList.framework */,
+				D9540B0129FB1B3B001403D7 /* DesignKit.framework */,
+				D9540A2D29FAB631001403D7 /* Storage */,
+				DDC9BD7DDBC2418562AEDBEA /* Pods_TodoList.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -453,6 +504,7 @@
 				D9D6588F297497DB00C3F089 /* Resources */,
 				D94413CE29A12AE100D156C1 /* SwiftGen */,
 				592DCC74666225AF2F8B639E /* [CP] Embed Pods Frameworks */,
+				D95409C929FAB367001403D7 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -489,12 +541,35 @@
 			mainGroup = D9D65888297497DB00C3F089;
 			productRefGroup = D9D65892297497DB00C3F089 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = D9540A3429FAB631001403D7 /* Products */;
+					ProjectRef = D9540A3329FAB631001403D7 /* Storage.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				D9D65890297497DB00C3F089 /* TodoList */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		D9540A3929FAB631001403D7 /* Storage.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Storage.framework;
+			remoteRef = D9540A3829FAB631001403D7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D9540A3B29FAB631001403D7 /* StorageTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = StorageTests.xctest;
+			remoteRef = D9540A3A29FAB631001403D7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		D9D6588F297497DB00C3F089 /* Resources */ = {
@@ -577,38 +652,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				D905EB9929A2AC6D00B34F6C /* TabBarState.swift in Sources */,
-				D9058D7A29F4103F00440FB7 /* IRepositorySearchRequest.swift in Sources */,
-				D9D6589E297497DC00C3F089 /* Persistence.swift in Sources */,
 				D97A77C029AAB71300F1AA26 /* AddTaskState.swift in Sources */,
-				D9576AD829F4136300549F6E /* DBRepositoryError.swift in Sources */,
-				D9576AD029F4121F00549F6E /* DBRepository.swift in Sources */,
 				D99C121529A12D5300BB8C7B /* Strings.swift in Sources */,
 				D99C121429A12D5300BB8C7B /* Colors.swift in Sources */,
 				D99C121729A12D5300BB8C7B /* Images.swift in Sources */,
 				D99C121629A12D5300BB8C7B /* Fonts.swift in Sources */,
 				D905EB9729A2AC5E00B34F6C /* TabBarStore.swift in Sources */,
-				D9058D7729F4100100440FB7 /* IRepository.swift in Sources */,
 				D9D65895297497DB00C3F089 /* TodoListApp.swift in Sources */,
 				D9D658A1297497DC00C3F089 /* TodoList.xcdatamodeld in Sources */,
 				D99C122729A136BD00BB8C7B /* MainContentView.swift in Sources */,
 				D99C123429A15BCE00BB8C7B /* TaskServiceAssembly.swift in Sources */,
-				D9576AD629F4131A00549F6E /* DBEntityMapper.swift in Sources */,
 				D91BF15329F5B00C00DD2197 /* MainActionCreatorBuilder.swift in Sources */,
 				D91BF15129F5AFBF00DD2197 /* MainContentViewBuilder.swift in Sources */,
 				D97A77BA29AAB5EA00F1AA26 /* AddTaskContentView.swift in Sources */,
-				D91BF14E29F5A70300DD2197 /* DBRepositoryBuilder.swift in Sources */,
 				D905EB9229A292DA00B34F6C /* TabBar.swift in Sources */,
 				D905EB9429A29F1F00B34F6C /* TabBarCoordinator.swift in Sources */,
-				D9576AD229F4124900549F6E /* IDBContextProvider.swift in Sources */,
 				D9D977D629AD5CD500544544 /* AddTaskCoordinator.swift in Sources */,
 				D9D977DA29AFDE4900544544 /* MainButton.swift in Sources */,
 				D97A77C229AAB72200F1AA26 /* AddTaskActionCreator.swift in Sources */,
 				D97A77BE29AAB70700F1AA26 /* AddTaskStore.swift in Sources */,
 				D95A758129A7B0600049715D /* TabBarButton.swift in Sources */,
-				D9576AD429F4126100549F6E /* DBContextProvider.swift in Sources */,
 				D9576ADD29F414A400549F6E /* TaskMapper.swift in Sources */,
 				D99C122529A136BD00BB8C7B /* MainTaskModel.swift in Sources */,
-				D911D96629F42988003A485B /* IDBContextProviderAssembly.swift in Sources */,
 				D99C121C29A135D400BB8C7B /* TaskCell.swift in Sources */,
 				D99C122629A136BD00BB8C7B /* MainCoordinator.swift in Sources */,
 				D911D96329F427E0003A485B /* TaskSearchRequest.swift in Sources */,

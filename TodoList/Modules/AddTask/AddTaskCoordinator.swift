@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Swinject
+import Storage
 
 final class AddTaskCoordinator {
 
@@ -18,12 +19,13 @@ final class AddTaskCoordinator {
     func start() -> some View {
         let state = AddTaskState()
         let store = AddTaskStore(state: state)
-        let contextProvider = assembler.resolver.resolve(IDBContextProvider.self)!
+        let contextProvider = assembler.resolver.resolve(IContextProvider.self)!
         let ac = AddTaskActionCreator(
             store: store,
             service: assembler.resolver.resolve(ITasksService.self)!,
-            repository: DBRepository(
+            storage: StorageCore(
                 contextProvider: contextProvider,
+                autoUpdateSearchRequest: TaskSearchRequest(),
                 entityMapper: TaskEntityMapper()
             )
         )

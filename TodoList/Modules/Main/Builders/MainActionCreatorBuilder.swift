@@ -5,14 +5,17 @@
 //  Created by MacBook Pro on 23.04.2023.
 //
 
+import Swinject
+import Storage
+
 struct MainActionCreatorBuilder {
 
 //    MARK: Properties
 
     private let assembler: Assembler
-    private let repository: DBRepository<TaskDomainModel, TaskEntity>
+    private let storage: StorageCore<TaskDomainModel, TaskEntity>
 
-    private let contextProvider: IDBContextProvider
+    private let contextProvider: IContextProvider
     private let service: ITasksService
 
     private let mapper = TaskEntityMapper()
@@ -21,9 +24,10 @@ struct MainActionCreatorBuilder {
 
     init(_ assembler: Assembler) {
         self.assembler = assembler
-        contextProvider = assembler.resolver.resolve(IDBContextProvider.self)!
-        repository = DBRepositoryBuilder.make(
+        contextProvider = assembler.resolver.resolve(IContextProvider.self)!
+        storage = StorageCoreBuilder.make(
             contextProvider: contextProvider,
+            request: TaskSearchRequest(),
             mapper: mapper
         )
         service = assembler.resolver.resolve(ITasksService.self)!
@@ -34,8 +38,7 @@ struct MainActionCreatorBuilder {
     func build(store: MainStore) -> MainActionCreator {
         MainActionCreator(
             store: store,
-            service: service,
-            repository: repository
+            storage: storage
         )
     }
 }

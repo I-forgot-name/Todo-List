@@ -5,9 +5,10 @@
 //  Created by MacBook Pro on 22.04.2023.
 //
 
+import Storage
 import CoreData
 
-final class TaskEntityMapper: DBEntityMapper<TaskDomainModel,  TaskEntity> {
+final class TaskEntityMapper: EntityMapper<TaskDomainModel,  TaskEntity> {
     override func convert(_ entity: TaskEntity) -> TaskDomainModel? {
         return TaskDomainModel(
             id: entity.id ?? "",

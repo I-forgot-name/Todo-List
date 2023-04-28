@@ -1,5 +1,5 @@
 //
-//  DBContextProvider.swift
+//  ContextProvider.swift
 //  TodoList
 //
 //  Created by MacBook Pro on 22.04.2023.
@@ -7,7 +7,7 @@
 
 import CoreData
 
-final class DBContextProvider {
+public final class ContextProvider {
     private lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "TodoList")
 
@@ -25,12 +25,12 @@ final class DBContextProvider {
 
 // MARK: - IDBContextProvider
 
-extension DBContextProvider: IDBContextProvider {
-    func mainQueueContext() -> NSManagedObjectContext {
+extension ContextProvider: IContextProvider {
+    public func mainQueueContext() -> NSManagedObjectContext {
         mainContext
     }
 
-    func newBackgroundContext(_ block: @escaping (NSManagedObjectContext) -> Void) {
+    public func newBackgroundContext(_ block: @escaping (NSManagedObjectContext) -> Void) {
         block(persistentContainer.newBackgroundContext())
     }
 }
