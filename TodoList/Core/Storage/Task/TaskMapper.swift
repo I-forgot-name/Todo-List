@@ -13,7 +13,8 @@ final class TaskEntityMapper: EntityMapper<TaskDomainModel,  TaskEntity> {
         return TaskDomainModel(
             id: entity.id ?? "",
             title: entity.title ?? "",
-            isComplete: entity.isComplete
+            isComplete: entity.isComplete,
+            timestamp: entity.timestamp ?? Date()
         )
     }
 
@@ -21,6 +22,7 @@ final class TaskEntityMapper: EntityMapper<TaskDomainModel,  TaskEntity> {
         entity.id = model.id
         entity.title = model.title
         entity.isComplete = model.isComplete
+        entity.timestamp = model.timestamp
     }
 
     override func entityAccessorKey(_ entity: TaskEntity) -> String {

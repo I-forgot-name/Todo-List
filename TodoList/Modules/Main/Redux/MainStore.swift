@@ -49,7 +49,7 @@ private final class MainReducer {
 
             state.tasks[index].isComplete.toggle()
         case .tasksStorageChanched(let tasks):
-            state.tasks = tasks
+            state.tasks = tasks.sorted { $0.timestamp > $1.timestamp }
         }
     }
 }

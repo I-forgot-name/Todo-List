@@ -20,7 +20,8 @@ struct AddTaskState: Equatable {
         .init(
             id: id,
             title: title,
-            isComplete: isComplete
+            isComplete: isComplete,
+            timestamp: Date()
         )
     }
 
