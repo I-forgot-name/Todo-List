@@ -10,7 +10,7 @@ import SwiftUI
 import Storage
 
 final class MainActionCreator {
-    private weak var store: MainStore?
+    @ObservedObject private var store: MainStore
     private var cancelBag = Set<AnyCancellable>()
 
     @Published private var storage: StorageCore<TaskDomainModel, TaskEntity>

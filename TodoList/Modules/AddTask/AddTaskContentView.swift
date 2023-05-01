@@ -12,11 +12,12 @@ struct AddTaskContentView: View {
 
     @EnvironmentObject private var store: AddTaskStore
     private let ac: AddTaskActionCreator
+    private weak var addTaskCoordinator: AddTaskCoordinator?
     @State var text: String = ""
-    @Environment(\.presentationMode) var presentationMode
 
-    init(ac: AddTaskActionCreator) {
+    init(ac: AddTaskActionCreator, addTaskCoordinator: AddTaskCoordinator?) {
         self.ac = ac
+        self.addTaskCoordinator = addTaskCoordinator
     }
 
     var body: some View {
@@ -33,18 +34,9 @@ struct AddTaskContentView: View {
 
                 Spacer()
 
-                Button {
+                MainButton(title: "Create"){
                     store.dispatch(.didTapCreate)
-                    presentationMode.wrappedValue.dismiss()
-                } label: {
-                    Text("Create")
                 }
-                .padding()
-                .background(Color.main)
-                .foregroundColor(.white)
-                .clipShape(RoundedRectangle(cornerRadius: 5))
-                .font(.bold(.title3)())
-
             }
             .padding(.horizontal, 20)
         }

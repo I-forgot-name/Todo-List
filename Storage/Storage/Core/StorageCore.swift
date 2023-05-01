@@ -97,7 +97,6 @@ public final class StorageCore<DomainModel, DBEntity>: NSObject, IStorageCore, O
                 assertionFailure(DBError.entityTypeError.localizedDescription)
                 return(.success([]))
             }
-
             let converted = results.compactMap({ return self.entityMapper.convert($0) })
             return(.success(converted))
         } catch {
@@ -109,11 +108,11 @@ public final class StorageCore<DomainModel, DBEntity>: NSObject, IStorageCore, O
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: associatedEntityName)
         fetchRequest.predicate = request.predicate
         fetchRequest.includesPropertyValues = false
-        let context = contextProvider.mainQueueContext()
-
-        let results = try? context.fetch(fetchRequest)
-        results?.forEach({ context.delete($0) })
-        context.saveContext()
+        contextProvider.newBackgroundContext { context in
+            let results = try? context.fetch(fetchRequest)
+            results?.forEach({ context.delete($0) })
+            context.saveContext()
+        }
     }
 
     public func eraseAllData() {
@@ -121,24 +120,24 @@ public final class StorageCore<DomainModel, DBEntity>: NSObject, IStorageCore, O
         let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
 
         batchDeleteRequest.resultType = .resultTypeObjectIDs
-        let context = contextProvider.mainQueueContext()
+        contextProvider.newBackgroundContext { context in
+            do {
+                let result = try context.execute(batchDeleteRequest)
+                guard let deleteResult = result as? NSBatchDeleteResult,
+                      let ids = deleteResult.result as? [NSManagedObjectID]
+                else {
+                    return
+                }
 
-        do {
-            let result = try context.execute(batchDeleteRequest)
-            guard let deleteResult = result as? NSBatchDeleteResult,
-                  let ids = deleteResult.result as? [NSManagedObjectID]
-            else {
+                let changes = [NSDeletedObjectsKey: ids]
+                NSManagedObjectContext.mergeChanges(
+                    fromRemoteContextSave: changes,
+                    into: [self.contextProvider.mainQueueContext()]
+                )
                 return
+            } catch {
+                print("\n[DBRepository - \(DBEntity.self)]\n", "method: eraseAllData\n", "Error: \(error)\n\n")
             }
-
-            let changes = [NSDeletedObjectsKey: ids]
-            NSManagedObjectContext.mergeChanges(
-                fromRemoteContextSave: changes,
-                into: [self.contextProvider.mainQueueContext()]
-            )
-            return
-        } catch {
-            print("\n[DBRepository - \(DBEntity.self)]\n", "method: eraseAllData\n", "Error: \(error)\n\n")
         }
     }
 }
@@ -151,23 +150,22 @@ extension StorageCore {
         var existingObjects: [String: DBEntity] = [:]
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: self.associatedEntityName)
 
-        let context = contextProvider.mainQueueContext()
+        contextProvider.newBackgroundContext { context in
+            (try? context.fetch(fetchRequest) as? [DBEntity])?.forEach({
+                let accessor = self.entityMapper.entityAccessorKey($0)
+                existingObjects[accessor] = $0
+            })
 
-        (try? context.fetch(fetchRequest) as? [DBEntity])?.forEach({
-            let accessor = self.entityMapper.entityAccessorKey($0)
-            existingObjects[accessor] = $0
-        })
-
-
-        data.forEach({
-            let accessor = self.entityMapper.entityAccessorKey($0)
-            let entityForUpdate: DBEntity? = existingObjects[accessor] ?? NSEntityDescription.insertNewObject(
-                forEntityName: self.associatedEntityName,
-                into: context
-            ) as? DBEntity
-            guard let entity = entityForUpdate else { return }
-            self.entityMapper.update(entity, by: $0)
-        })
-        context.saveContext()
+            data.forEach({
+                let accessor = self.entityMapper.entityAccessorKey($0)
+                let entityForUpdate: DBEntity? = existingObjects[accessor] ?? NSEntityDescription.insertNewObject(
+                    forEntityName: self.associatedEntityName,
+                    into: context
+                ) as? DBEntity
+                guard let entity = entityForUpdate else { return }
+                self.entityMapper.update(entity, by: $0)
+            })
+            context.saveContext()
+        }
     }
 }

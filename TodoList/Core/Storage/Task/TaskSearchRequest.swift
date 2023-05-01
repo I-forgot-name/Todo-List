@@ -15,4 +15,15 @@ struct TaskSearchRequest: IStorageSearchRequest {
     var predicate: NSPredicate?
 
     var sortDescriptors: [NSSortDescriptor] = []
+
+//    enum RequestType {
+//        case get
+//        case delete
+//    }
+//
+//    static func request(by type: RequestType) -> IStorageSearchRequest {
+//        switch type {
+//        case .get
+//        }
+//    }
 }

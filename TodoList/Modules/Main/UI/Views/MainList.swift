@@ -30,14 +30,10 @@ struct MainList: View {
                                 TaskCell(model: TaskCellModel.init(title: task.title, isOn: task.isComplete)) {
                                     didTapChackmark(task.id)
                                 }
-                                .swipeActions(allowsFullSwipe: true) {
-                                    Button {
-                                        delete(task)
-                                    } label: {
-                                        Label("Delete", systemImage: "trash")
-                                    }
-                                    .tint(.red)
-                                }
+                            }
+                            .onDelete { indexSet in
+                                guard let index = indexSet.first else { return }
+                                delete(models[index])
                             }
                         }
             }

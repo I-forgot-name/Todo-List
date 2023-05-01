@@ -28,7 +28,7 @@ final class AddTaskCoordinator {
                 entityMapper: TaskEntityMapper()
             )
         )
-        let view = AddTaskContentView(ac: ac).environmentObject(store)
+        let view = AddTaskContentView(ac: ac, addTaskCoordinator: self).environmentObject(store)
         return view
     }
 }
