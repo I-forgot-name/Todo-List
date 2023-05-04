@@ -1,2 +1,2 @@
 # Todo-List
-Per-project todo list for portfolio 
+This is simple Todo-list. It is project for update skills in swiftUI and Combine + Redux arch
