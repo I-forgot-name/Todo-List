@@ -9,7 +9,6 @@ import SwiftUI
 import Combine
 
 struct AddTaskContentView: View {
-
     @EnvironmentObject private var store: AddTaskStore
     private let ac: AddTaskActionCreator
     private weak var addTaskCoordinator: AddTaskCoordinator?
@@ -21,24 +20,22 @@ struct AddTaskContentView: View {
     }
 
     var body: some View {
-        NavigationView {
-            VStack {
-                HStack {
-                    TextField("Title", text: $text)
-                        .onChange(of: text, perform: { newValue in
-                            store.dispatch(.didChangeTitle(text))
-                        })
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .navigationTitle("Create task")
-                }
-
-                Spacer()
-
-                MainButton(title: "Create"){
-                    store.dispatch(.didTapCreate)
-                }
+        VStack {
+            HStack {
+                TextField("Title", text: $text)
+                    .onChange(of: text, perform: { newValue in
+                        store.dispatch(.didChangeTitle(text))
+                    })
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
             }
-            .padding(.horizontal, 20)
+            .padding(20)
+
+            MainButton(title: "Create"){
+                store.dispatch(.didTapCreate)
+            }
+            .padding(.bottom, 20)
         }
+
+        .background(.white)
     }
 }

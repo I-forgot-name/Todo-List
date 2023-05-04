@@ -36,8 +36,6 @@ struct TabBar: View {
                 Text("Profile")
             }
 
-            Spacer()
-
             GeometryReader { geo in
                 HStack (alignment: .center) {
                     Button(action: {

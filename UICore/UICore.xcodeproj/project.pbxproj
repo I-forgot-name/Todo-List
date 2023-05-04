@@ -8,13 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		D9540B4E29FE9BA8001403D7 /* UICore.h in Headers */ = {isa = PBXBuildFile; fileRef = D9540B4D29FE9BA8001403D7 /* UICore.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D9540B5629FE9BFD001403D7 /* UIView+halfSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9540B5529FE9BFD001403D7 /* UIView+halfSheet.swift */; };
+		D9540B5D2A01702D001403D7 /* Popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9540B5C2A01702D001403D7 /* Popup.swift */; };
+		D9540B602A019C4E001403D7 /* KeyboardDismiss.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9540B5F2A019C4E001403D7 /* KeyboardDismiss.swift */; };
+		D9540B642A041E13001403D7 /* View+Popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9540B632A041E13001403D7 /* View+Popup.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D9540B4A29FE9BA8001403D7 /* UICore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UICore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9540B4D29FE9BA8001403D7 /* UICore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UICore.h; sourceTree = "<group>"; };
-		D9540B5529FE9BFD001403D7 /* UIView+halfSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+halfSheet.swift"; sourceTree = "<group>"; };
+		D9540B5C2A01702D001403D7 /* Popup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popup.swift; sourceTree = "<group>"; };
+		D9540B5F2A019C4E001403D7 /* KeyboardDismiss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardDismiss.swift; sourceTree = "<group>"; };
+		D9540B632A041E13001403D7 /* View+Popup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Popup.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +51,8 @@
 		D9540B4C29FE9BA8001403D7 /* UICore */ = {
 			isa = PBXGroup;
 			children = (
+				D9540B5F2A019C4E001403D7 /* KeyboardDismiss.swift */,
+				D9540B622A041DD5001403D7 /* Popup */,
 				D9540B5429FE9BB9001403D7 /* Extensions */,
 				D9540B4D29FE9BA8001403D7 /* UICore.h */,
 			);
@@ -56,9 +62,25 @@
 		D9540B5429FE9BB9001403D7 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				D9540B5529FE9BFD001403D7 /* UIView+halfSheet.swift */,
+				D9540B5E2A017D0B001403D7 /* View */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D9540B5E2A017D0B001403D7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D9540B632A041E13001403D7 /* View+Popup.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D9540B622A041DD5001403D7 /* Popup */ = {
+			isa = PBXGroup;
+			children = (
+				D9540B5C2A01702D001403D7 /* Popup.swift */,
+			);
+			path = Popup;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,7 +163,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9540B5629FE9BFD001403D7 /* UIView+halfSheet.swift in Sources */,
+				D9540B5D2A01702D001403D7 /* Popup.swift in Sources */,
+				D9540B642A041E13001403D7 /* View+Popup.swift in Sources */,
+				D9540B602A019C4E001403D7 /* KeyboardDismiss.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

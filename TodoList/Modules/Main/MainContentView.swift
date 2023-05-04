@@ -35,8 +35,14 @@ struct MainContentView: View {
             .navigationTitle(L10n.Main.Title.yourTask)
         }
         .background(Color.red)
-        .halfSheet(showSheet: $isPresented) {
-            mainCoordinator.addTask()
-        }
+        .popup(
+            isPresented: $isPresented,
+            alignment: .bottom,
+            direction: .bottom,
+            needShadow: true,
+            content: {
+                mainCoordinator.addTask()
+            }
+        )
     }
 }
