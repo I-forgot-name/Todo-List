@@ -22,7 +22,7 @@ struct AddTaskContentView: View {
     var body: some View {
         VStack {
             HStack {
-                TextField("Title", text: $text)
+                TextField("Title", text: $store.state.title)
                     .onChange(of: text, perform: { newValue in
                         store.dispatch(.didChangeTitle(text))
                     })

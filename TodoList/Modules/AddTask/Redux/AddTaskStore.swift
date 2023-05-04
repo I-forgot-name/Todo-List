@@ -41,6 +41,7 @@ private final class AddTaskReducer {
             updateAddTaskStatus(.load, in: &state)
         case .completeAddTask:
             updateAddTaskStatus(.idle, in: &state)
+            state.title = ""
         }
     }
 
