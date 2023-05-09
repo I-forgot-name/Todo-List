@@ -18,7 +18,8 @@ final class AddTaskCoordinator {
     }
     func start() -> some View {
         let state = AddTaskState()
-        let store = AddTaskStore(state: state)
+        let reducer = AddTaskReducer()
+        let store = AddTaskStore(state: state, reducer: reducer)
         let contextProvider = assembler.resolver.resolve(IContextProvider.self)!
         let ac = AddTaskActionCreator(
             store: store,

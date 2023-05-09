@@ -16,12 +16,13 @@ struct AddTaskState: Equatable {
     var id: String = UUID().uuidString
     var title: String = ""
     var isComplete: Bool = false
+    var date: Date = .init()
     var taskDomainModel: TaskDomainModel {
         .init(
             id: id,
             title: title,
             isComplete: isComplete,
-            timestamp: Date()
+            timestamp: date
         )
     }
 
