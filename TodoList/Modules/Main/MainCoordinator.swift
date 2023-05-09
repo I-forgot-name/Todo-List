@@ -28,7 +28,7 @@ final class MainCoordinator {
         return cv
     }
 
-    func addTask() -> some View {
+    func addTaskView() -> some View {
         addTaskCoordinator.start()
     }
 }

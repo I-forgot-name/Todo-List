@@ -41,7 +41,7 @@ struct MainContentView: View {
             direction: .bottom,
             needShadow: true,
             content: {
-                mainCoordinator.addTask()
+                mainCoordinator.addTaskView()
             }
         )
     }
