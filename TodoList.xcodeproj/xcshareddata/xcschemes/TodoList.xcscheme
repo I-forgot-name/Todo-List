@@ -26,7 +26,18 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES"
+      onlyGenerateCoverageForSpecifiedTargets = "YES">
+      <CodeCoverageTargets>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "D9D65890297497DB00C3F089"
+            BuildableName = "TodoList.app"
+            BlueprintName = "TodoList"
+            ReferencedContainer = "container:TodoList.xcodeproj">
+         </BuildableReference>
+      </CodeCoverageTargets>
       <Testables>
          <TestableReference
             skipped = "NO">
@@ -45,6 +56,16 @@
                BlueprintIdentifier = "D9540A1829FAB5A3001403D7"
                BuildableName = "TESTTests.xctest"
                BlueprintName = "TESTTests"
+               ReferencedContainer = "container:TodoList.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D980C8412A0A98770007DB12"
+               BuildableName = "TodoListTests.xctest"
+               BlueprintName = "TodoListTests"
                ReferencedContainer = "container:TodoList.xcodeproj">
             </BuildableReference>
          </TestableReference>
