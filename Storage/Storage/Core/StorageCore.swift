@@ -14,14 +14,10 @@ public final class StorageCore<DomainModel, DBEntity>: NSObject, IStorageCore, O
 
     @Published public var actualData: [DomainModel] = []
 
-    //    Published var searchedData: [DomainModel] = []
-
     private let associatedEntityName: String
     private let contextProvider: IContextProvider
     private let entityMapper: EntityMapper<DomainModel, DBEntity>
     private var fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>?
-
-    
 
     // MARK: - Init
 
@@ -77,10 +73,16 @@ public final class StorageCore<DomainModel, DBEntity>: NSObject, IStorageCore, O
         actualData = converted
     }
 
+    /// Сохраняет объекты в репозиторий
+    /// - Parameters:
+    ///   - objects: Сохраняемые объекты
     public func save(_ objects: [DomainModel]) {
         saveIn(data: objects)
     }
 
+    /// Загрузка данных из репозитория
+    /// - Parameter request: Запрос загружаемых данных
+    /// - Returns: Результат загрузки данных
     public func present(
         by request: IStorageSearchRequest
     ) -> Result<[DomainModel], Error> {
@@ -104,6 +106,8 @@ public final class StorageCore<DomainModel, DBEntity>: NSObject, IStorageCore, O
         }
     }
 
+    /// Удаление данных из репозитория
+    /// - Parameters: request: Запрос данных, которые нужно удалить
     public func delete(by request: IStorageSearchRequest) {
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: associatedEntityName)
         fetchRequest.predicate = request.predicate
@@ -115,6 +119,7 @@ public final class StorageCore<DomainModel, DBEntity>: NSObject, IStorageCore, O
         }
     }
 
+    /// Удаление всех данных из репозитория
     public func eraseAllData() {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: associatedEntityName)
         let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
@@ -141,6 +146,8 @@ public final class StorageCore<DomainModel, DBEntity>: NSObject, IStorageCore, O
         }
     }
 }
+
+// MARK: StorageCore + saveIn
 
 extension StorageCore {
 

@@ -80,6 +80,8 @@ public struct Popup<T: View>: ViewModifier {
                 .onTapGesture {
                     withAnimation(.spring()) {
                         isPresented = false
+                        
+                        hideKeyboard()
                     }
                 }
         }

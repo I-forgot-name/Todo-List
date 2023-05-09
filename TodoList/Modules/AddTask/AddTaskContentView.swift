@@ -11,12 +11,10 @@ import Combine
 struct AddTaskContentView: View {
     @EnvironmentObject private var store: AddTaskStore
     private let ac: AddTaskActionCreator
-    private weak var addTaskCoordinator: AddTaskCoordinator?
     @State var text: String = ""
 
-    init(ac: AddTaskActionCreator, addTaskCoordinator: AddTaskCoordinator?) {
+    init(ac: AddTaskActionCreator) {
         self.ac = ac
-        self.addTaskCoordinator = addTaskCoordinator
     }
 
     var body: some View {
@@ -35,7 +33,6 @@ struct AddTaskContentView: View {
             }
             .padding(.bottom, 20)
         }
-
         .background(.white)
     }
 }
