@@ -9,6 +9,7 @@ Technology use in this project:
 
 - Swift
 - UIKit, SwiftUI
+- Combine
 - Redux+Coordinator
 - Multi xcode project in workspace
 - Swinject
