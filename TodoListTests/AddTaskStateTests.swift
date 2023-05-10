@@ -18,8 +18,8 @@ class AddTaskStateTests: XCTestCase {
     }
 
     override func tearDown() {
-        super.tearDown()
         state = nil
+        super.tearDown()
     }
 
     func testCreateDomainModel() throws {

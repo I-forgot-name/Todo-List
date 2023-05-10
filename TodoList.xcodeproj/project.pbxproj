@@ -355,6 +355,7 @@
 		D980C8432A0A98770007DB12 /* TodoListTests */ = {
 			isa = PBXGroup;
 			children = (
+				D9C30D582A0C0A6100EE73B6 /* AddTaskTests */,
 				D980C84D2A0AA9D90007DB12 /* AddTaskStateTests.swift */,
 				D980C84F2A0AAD790007DB12 /* AddTaskReducerTests.swift */,
 				D980C8512A0AE24E0007DB12 /* AddTaskStoreTests.swift */,
@@ -426,10 +427,18 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		D9C30D582A0C0A6100EE73B6 /* AddTaskTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AddTaskTests;
+			sourceTree = "<group>";
+		};
 		D9D65888297497DB00C3F089 = {
 			isa = PBXGroup;
 			children = (
 				D97DC9B629A1299800C333A8 /* swiftgen.yml */,
+				D980C8552A0AE5FB0007DB12 /* Mocks */,
 				D9D65893297497DB00C3F089 /* TodoList */,
 				D980C8432A0A98770007DB12 /* TodoListTests */,
 				D9D65892297497DB00C3F089 /* Products */,
@@ -455,7 +464,6 @@
 				D9D658A72974988400C3F089 /* Modules */,
 				D9D6589A297497DC00C3F089 /* Preview Content */,
 				D97DC9B029A1287D00C333A8 /* Resources */,
-				D980C8552A0AE5FB0007DB12 /* Mocks */,
 				D9D6589F297497DC00C3F089 /* TodoList.xcdatamodeld */,
 			);
 			path = TodoList;

@@ -22,6 +22,8 @@
 		D9540AF329FB0637001403D7 /* DBError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9540AF229FB0637001403D7 /* DBError.swift */; };
 		D9540AF629FB1866001403D7 /* IContextProviderAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9540AF429FB0958001403D7 /* IContextProviderAssembly.swift */; };
 		D9540B0A29FBD9DE001403D7 /* DBRepositoryBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9540B0729FBD9DE001403D7 /* DBRepositoryBuilder.swift */; };
+		D9C30D5A2A0C0CEE00EE73B6 /* StorageCoreTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C30D592A0C0CEE00EE73B6 /* StorageCoreTest.swift */; };
+		D9C30D5D2A0C0DD600EE73B6 /* StorageCoreMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C30D5C2A0C0DD600EE73B6 /* StorageCoreMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		D9540AF229FB0637001403D7 /* DBError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBError.swift; sourceTree = "<group>"; };
 		D9540AF429FB0958001403D7 /* IContextProviderAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IContextProviderAssembly.swift; sourceTree = "<group>"; };
 		D9540B0729FBD9DE001403D7 /* DBRepositoryBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBRepositoryBuilder.swift; sourceTree = "<group>"; };
+		D9C30D592A0C0CEE00EE73B6 /* StorageCoreTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageCoreTest.swift; sourceTree = "<group>"; };
+		D9C30D5C2A0C0DD600EE73B6 /* StorageCoreMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageCoreMock.swift; sourceTree = "<group>"; };
 		E8ED8F0F978A452E46AA06C0 /* Pods-TodoList-Storage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoList-Storage.release.xcconfig"; path = "Target Support Files/Pods-TodoList-Storage/Pods-TodoList-Storage.release.xcconfig"; sourceTree = "<group>"; };
 		F029B81BCD5BC4AB8EF4F113 /* Pods-TodoList-Storage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoList-Storage.debug.xcconfig"; path = "Target Support Files/Pods-TodoList-Storage/Pods-TodoList-Storage.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -88,6 +92,7 @@
 		D9540A4D29FAB789001403D7 = {
 			isa = PBXGroup;
 			children = (
+				D9C30D5B2A0C0DBB00EE73B6 /* Mocks */,
 				D9540A5929FAB789001403D7 /* Storage */,
 				D9540A6529FAB789001403D7 /* StorageTests */,
 				D9540A5829FAB789001403D7 /* Products */,
@@ -120,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				D9540A6629FAB789001403D7 /* StorageTests.swift */,
+				D9C30D592A0C0CEE00EE73B6 /* StorageCoreTest.swift */,
 			);
 			path = StorageTests;
 			sourceTree = "<group>";
@@ -162,6 +168,14 @@
 				C807CFE7F58E7CECDA05666B /* Pods_TodoList_Storage.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D9C30D5B2A0C0DBB00EE73B6 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				D9C30D5C2A0C0DD600EE73B6 /* StorageCoreMock.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,6 +317,7 @@
 				D9540AE729FAC83B001403D7 /* StorageCore.swift in Sources */,
 				D9540AF129FB059A001403D7 /* IStorageSearchRequest.swift in Sources */,
 				D9540AE329FAC742001403D7 /* ContextProvider.swift in Sources */,
+				D9C30D5D2A0C0DD600EE73B6 /* StorageCoreMock.swift in Sources */,
 				D9540AEB29FACBB2001403D7 /* CoreData+saveContext.swift in Sources */,
 				D9540AE529FAC759001403D7 /* IContextProvider.swift in Sources */,
 				D9540AF329FB0637001403D7 /* DBError.swift in Sources */,
@@ -317,6 +332,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9C30D5A2A0C0CEE00EE73B6 /* StorageCoreTest.swift in Sources */,
 				D9540A6729FAB789001403D7 /* StorageTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
